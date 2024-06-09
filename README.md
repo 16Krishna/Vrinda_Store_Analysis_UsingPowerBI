@@ -25,14 +25,19 @@ Vrinda Store wants to create an Annual Sales Report for 2022. So, that Vrinda ca
 ### Steps followed 
 
 - Step 1 : Data cleaning in excel:
+  
 		In the gender column, all the 'M' was given as Male and 'F' was Female
 		The Qty column, all the One was replaced with 1 and all the Two was replaced by 2
 
 - Step 2 : Data Processing/DAX using Transform Data in PowerBI:
-		Extraction of Month from each cell using Transform Data->Add column->Date->Month->Name of the Month
-		Created Age Group column such that the relation between age and gender can be found out
+  
+		-Extraction of Month from each cell using Transform Data->Add column->Date->Month->Name of the Month
+		-Created Age Group column such that the relation between age and gender can be found out
 			= Table.AddColumn(#"Inserted Month Name", "Custom", each if [Age] > 50 then "Senior" else if [Age] > 20 then "Adult" else if [Age] > 0 then "Teens" else null)
+
+  
 Now we will analyze the data-
+
 
 - Step 3 : KPI on the following-
             Count(Distinct) of OrderID
